@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'mfo',
             [
                 'attribute'=>'MFO',
-                'filter' => ['0' => 'Toshktrn', '1' => 'Aktiv'],
+                'filter' => ['0' => 'Toshkent', '1' => 'Aktiv'],
                 'value'=>function($model){
                     $name = \frontend\models\Mfo::findOne($model->mfo)->name;
                     return $name;

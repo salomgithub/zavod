@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use frontend\models\Mfo;
+use frontend\models\User;
 use Yii;
 use frontend\models\Employees;
 use frontend\models\EmployeesSearch;
@@ -89,8 +90,14 @@ class EmployeesController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->status !=10) {
+                $user = User::findOne(["employee_id => $model->employee_id"]);
+                $user->status = 9;
+            }
+            if ($model->save() && $user->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [

@@ -55,7 +55,6 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-	    [['mfo'], 'integer'],
             ['status', 'in', 'range' => [UserStatus::ACTIVE, UserStatus::INACTIVE]],
         ];
     }

@@ -70,6 +70,7 @@ return [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
             'site/*',
+            // '*',
 //            'site/logout',
 //            'site/login',
 //            'admin/*',
