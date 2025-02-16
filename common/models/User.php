@@ -19,6 +19,7 @@ use mdm\admin\models\User as UserModel;
  * @property integer $updated_at
  * @property string $password write-only password
  */
+
 class User extends UserModel
 {
 }

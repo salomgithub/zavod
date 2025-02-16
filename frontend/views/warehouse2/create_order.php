@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form_order', [
         'model' => $model,
+        'xato' => $xato,
     ]) ?>
 
 </div>

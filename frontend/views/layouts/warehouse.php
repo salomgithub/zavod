@@ -37,18 +37,14 @@ OylikAsset::register($this);
         ],
     ]);
     $menuItems = [
-//        ['label' => 'Hodimlar', 'url' => ['/employees/index']],
-//        ['label' => 'User', 'url' => ['/admin/user/signup']],
-//        ['label' => 'Tovar', 'url' => ['/tovar/index']],
-//        ['label' => 'Ranglar', 'url' => ['/color/index']],
-//        ['label' => 'O`lchamlar', 'url' => ['/size/index']],
-//        ['label' => 'Operatsiyalar', 'url' => ['/code/index']],
-//        ['label' => 'Buyurtmalar', 'url' => ['/orders/index']],
-//        ['label' => 'Jarayonlar', 'url' => ['/worker/index']],
-//        ['label' => 'Buxgalteriya ', 'url' => ['/date/index']],
-        ['label' => 'Omborxona', 'url' => ['/qoldiq/index']],
-//        ['label' => 'Omborxona', 'url' => ['/warehouse/index']],
-//        ['label' => 'Statistika', 'url' => ['/oylik/index']],
+        ['label' => 'Asosiy', 'url' => ['/warehouse/index']],
+        ['label' => 'Kirim qilish', 'url' => ['/warehouse-input/create']],
+        ['label' => 'Chiqim qilish', 'url' => ['/warehouse-output/create']],
+        ['label' => 'Kirimlar', 'url' => ['/warehouse-input/index']],
+        ['label' => 'Chiqimlar', 'url' => ['/warehouse-output/index']],
+        ['label' => 'Mahsulotlar', 'url' => ['/materials/index']],
+        ['label' => 'Bichish', 'url' => ['/bichish/index']],
+//        ['label' => 'Omborxona', 'url' => ['/warehouse-/index']],
     ];
     if (Yii::$app->user->isGuest) {
         // $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -71,7 +67,7 @@ OylikAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -79,14 +75,6 @@ OylikAsset::register($this);
         <?= $content ?>
     </div>
 </div>
-
-<!-- <footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer> -->
 
 <?php $this->endBody() ?>
 </body>

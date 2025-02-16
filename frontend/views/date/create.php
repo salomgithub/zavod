@@ -16,7 +16,7 @@ use yii\jui\DatePicker as DatePickerAlias;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="employees-form">
+<div class="container employees-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

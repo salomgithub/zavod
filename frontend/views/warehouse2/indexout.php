@@ -7,19 +7,20 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\WarehouseSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Mavrid tovarlari';
+$this->title = 'Tashqari';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="warehouse-index">
 
-    <h1>Mavrid tovarlari - Omborxona</h1>
+    <h1>Barcha ko'chadan kirim bo'lgan tovarlar</h1>
 
     <p>
-        <?= Html::a(' + Bozordan qabul qilish', ['create_tovar'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(' + Ishchilardan qabul qilish', ['create_order'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('  Omborxona', ['qoldiq/index'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Barcha mavriddan kelgan tovarlar', ['indexin'], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('tashqaridan kelgan tovarlar', ['indexout'], ['class' => 'btn btn-primary']) ?>
-
+        <?= Html::a(' + Bozordan qabul qilish', ['create_tovar'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(' + Ishchilardan qabul qilish', ['create_order'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(' - Chiqim ', ['chiqim/index'], ['class' => 'btn btn-danger']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -31,7 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'order_id',
             [
                 'attribute'=>'tovar_id',
                 'filter'=>\yii\helpers\ArrayHelper::map(\frontend\models\Tovar::find()->all(),'id','name'),
